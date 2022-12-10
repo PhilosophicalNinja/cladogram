@@ -6,16 +6,20 @@ unveilBtn.addEventListener('click', unveil);
 
 function unveil(){
     for(let i = 0; i < kingdoms.length; i++){
-        
+        buildElement("li", destination, `Kingdom: ${kingdoms[i].name}`);
         for(let j = 0; j < kingdoms[i].length; j++){
 
         }
     }
 }
 
-function buildElement(type, id, parent, content){
+function buildElement(type, parent, content, id){
     let tempVariable = document.createElement(type);
-    tempVariable.id = id;
-    tempVariable.innerHTML = content;
+    if(id){
+        tempVariable.id = id;
+    }
+    if(content){
+        tempVariable.innerHTML = content;
+    }
     parent.append(tempVariable);
 }
